@@ -71,7 +71,6 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Image.asset(
                         "assets/images/doctorbai.png",
-                       
                       ),
                     ],
                   ),
@@ -94,12 +93,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                //mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 20),
                   Container(
-                    padding: const EdgeInsets.all(15),
+                    margin: EdgeInsets.only(left: 25),
                     height: 50,
                     width: 350,
                     decoration: BoxDecoration(
@@ -136,24 +135,146 @@ class _HomePageState extends State<HomePage> {
                         label: "Top Doctors",
                       ),
                       buildOption(
-                        iconPath: "assets/images/pharma.png",
+                        iconPath: "assets/images/Pharmacy.png",
                         label: "Pharmacy",
                       ),
                       buildOption(
-                        iconPath: "assets/images/ambulance.png",
+                        iconPath: "assets/images/Ambulance.png",
                         label: "Ambulance",
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  Text(
-                    "Health article",
-                    style: GoogleFonts.poppins(
-                      color: AppColors.blackblur,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
+                  const SizedBox(height: 30),
+                  Padding(
+                    padding: EdgeInsets.all(25),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Health article",
+                          style: GoogleFonts.poppins(
+                            color: AppColors.thirdColor,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 22,
+                          ),
+                        ),
+                        const Spacer(),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            "See all",
+                            style: GoogleFonts.inter(
+                              color: AppColors.secondoryColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    child: ListView.builder(
+                      itemCount: 15,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: 10),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color:
+                                        const Color.fromRGBO(34, 31, 31, 0.1)),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(right: 15),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(6),
+                                        ),
+                                        child: Image.asset(
+                                            "assets/images/article1.png"),
+                                      )
+                                    ],
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      // mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          textAlign: TextAlign.start,
+                                          "The 25 Healthiest Fruits You Can Eat, According to a Nutritionist",
+                                          style: GoogleFonts.poppins(
+                                            color: const Color.fromRGBO(
+                                                86, 86, 86, 1),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 2,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              textAlign: TextAlign.start,
+                                              "Jun 10,2023",
+                                              style: GoogleFonts.poppins(
+                                                color: AppColors.blackblur,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 10,
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              textAlign: TextAlign.start,
+                                              "5min read",
+                                              style: GoogleFonts.poppins(
+                                                color: AppColors.blackblur,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 10,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  //const Spacer(),
+                                  const SizedBox(
+                                    width: 50,
+                                  ),
+                                  Column(
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {},
+                                        child: Icon(
+                                          Icons.bookmark,
+                                          color: AppColors.secondoryColor,
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  )
                   // Add more widgets here for the health articles section
                 ],
               ),
@@ -162,33 +283,8 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
-  //     bottomNavigationBar: BottomNavigationBar(
-  //       type: BottomNavigationBarType.fixed,
-  //       items: const [
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.home),
-  //           label: 'Home',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.report),
-  //           label: 'Reports',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.notifications),
-  //           label: 'Notification',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.person),
-  //           label: 'Profile',
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  
-
   }
+
   Widget buildOption({required String iconPath, required String label}) {
     return Column(
       children: [
@@ -199,9 +295,11 @@ class _HomePageState extends State<HomePage> {
             color: AppColors.secondoryColor,
             shape: BoxShape.circle,
           ),
-          child: Image.asset(iconPath,),
+          child: Image.asset(
+            iconPath,
+          ),
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 20),
         Text(
           label,
           style: GoogleFonts.poppins(
