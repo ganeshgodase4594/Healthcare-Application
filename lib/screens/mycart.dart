@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthcare_frontend/screens/paymentdetil.dart';
 import 'package:healthcare_frontend/utils/colors.dart';
 
 class MyCart extends StatefulWidget {
@@ -296,21 +297,24 @@ class _MyCartState extends State<MyCart> {
                           fontWeight: FontWeight.w600),
                     ),
                     const Spacer(),
-                    Container(
-                      height: 51,
-                      width: 136,
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: AppColors.secondoryColor,
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Checkout",
-                          style: GoogleFonts.inter(
-                              color: AppColors.primaryColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600),
+                    GestureDetector(
+                      onTap: () => const PaymentDetail(),
+                      child: Container(
+                        height: 51,
+                        width: 136,
+                        padding: EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          color: AppColors.secondoryColor,
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Checkout",
+                            style: GoogleFonts.inter(
+                                color: AppColors.primaryColor,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600),
+                          ),
                         ),
                       ),
                     ),

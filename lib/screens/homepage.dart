@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthcare_frontend/screens/doctordetail.dart';
+import 'package:healthcare_frontend/screens/pharmacyproduct.dart';
+import 'package:healthcare_frontend/screens/topdoctors.dart';
 import 'package:healthcare_frontend/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -130,16 +133,25 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      buildOption(
-                        iconPath: "assets/images/Doctor.png",
-                        label: "Top Doctors",
+                      GestureDetector
+                      (
+                        onTap: () =>  TopDocrors(),
+                        child: buildOption(
+                          iconPath: "assets/images/Doctor.png",
+                          label: "Top Doctors",
+                        ),
+                      ),
+                      GestureDetector
+                      
+                      (
+                        onTap: () =>const PharmacyProduct(),
+                        child: buildOption(
+                          iconPath: "assets/images/Pharmacy.png",
+                          label: "Pharmacy",
+                        ),
                       ),
                       buildOption(
-                        iconPath: "assets/images/Pharmacy.png",
-                        label: "Pharmacy",
-                      ),
-                      buildOption(
-                        iconPath: "assets/images/Ambulance.png",
+                        iconPath: "assets/images/ambulance.png",
                         label: "Ambulance",
                       ),
                     ],
@@ -260,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                                     children: [
                                       GestureDetector(
                                         onTap: () {},
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.bookmark,
                                           color: AppColors.secondoryColor,
                                         ),

@@ -1,11 +1,40 @@
 import 'package:flutter/material.dart';
+import 'homepage.dart';
 
-class BottomNavigation extends StatelessWidget {
+import 'notification.dart';
+import 'profile.dart';
+import 'report.dart'; 
+
+class BottomNavigation extends StatefulWidget {
+  @override
+  _BottomNavigationState createState() => _BottomNavigationState();
+}
+
+class _BottomNavigationState extends State<BottomNavigation> {
+  int selectedIndex = 0; 
+
+  final List<Widget> pages = [
+   HomePage(),
+    ReportScreen(),
+    NotificationScreen(),
+    ProfileScreen(),
+   
+  ];
+
+  void onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: pages[selectedIndex], 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        currentIndex: selectedIndex, 
+        onTap: onItemTapped, 
         items: const [
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage("assets/images/Home.png")),
