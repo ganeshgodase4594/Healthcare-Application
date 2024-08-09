@@ -1,15 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:healthcare_frontend/firebase/firebasetoken.dart';
+import 'package:healthcare_frontend/firebase_options.dart';
 import 'package:healthcare_frontend/provider/productprovider.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/bottom_navigation.dart';
 
-void main() => runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => ProductProvider())
-      ],
-      child: MyApp(),
-    ));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FirebaseConnect.notification();
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider(create: (context) => ProductProvider())],
+    child: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: BottomNavigation(),
     );
   }
 }
