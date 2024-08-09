@@ -1,3 +1,4 @@
+import 'package:facebook_auth/facebook_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,37 +27,44 @@ class _GoogleSignInState extends State<GoogleSignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: GestureDetector(
-          onTap: () {},
-          child: Container(
-            height: 60,
-            width: 300,
-            decoration: BoxDecoration(
-              border:
-                  Border.all(color: Color.fromRGBO(229, 231, 235, 1), width: 1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Center(
-              child: Row(
-                children: [
-                  Icon(Icons.facebook),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    "Sign in with Google",
-                    style: GoogleFonts.poppins(
-                      color: AppColors.thirdColor,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 1,
+      body: Column(
+        children: [
+          GestureDetector(
+            onTap: () {
+              handleGoogleSignIn();
+            },
+            child: Container(
+              height: 60,
+              width: 300,
+              decoration: BoxDecoration(
+                border: Border.all(
+                    color: Color.fromRGBO(229, 231, 235, 1), width: 1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Center(
+                child: Row(
+                  children: [
+                    Icon(Icons.facebook),
+                    const SizedBox(
+                      width: 10,
                     ),
-                  ),
-                ],
+                    Text(
+                      "Sign in with Google",
+                      style: GoogleFonts.poppins(
+                        color: AppColors.thirdColor,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 1,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
       ),
     );
   }
