@@ -5,7 +5,7 @@ import 'package:healthcare_frontend/firebase_options.dart';
 import 'package:healthcare_frontend/provider/productprovider.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/bottom_navigation.dart';
+import 'firebase/signingoogle.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavigation(),
+      home: GoogleSignIn(),
     );
   }
 }

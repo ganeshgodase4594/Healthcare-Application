@@ -44,6 +44,11 @@ dependencies:
   flutter_onboarding_slider: ^1.0.11
   firebase_core: ^2.24.2
   firebase_messaging: ^14.7.10
+  firebase_auth: ^4.16.0
+  facebook_auth: ^0.0.3
+  pdf: ^3.11.1
+  path_provider: ^2.1.4
+  open_file: ^3.3.2
 
 dev_dependencies:
   flutter_test:
