@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthcare_frontend/screens/productdetail.dart';
 import 'package:healthcare_frontend/utils/colors.dart';
 
 class PharmacyProduct extends StatefulWidget {
@@ -171,75 +172,78 @@ class _PharmacyProductState extends State<PharmacyProduct> {
                     itemCount: 10,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Container(
-                        margin: const EdgeInsets.only(right: 15),
-                        padding: const EdgeInsets.all(15),
-                        height: 190,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(
-                              width: 1,
-                              color: Color.fromRGBO(64, 124, 226, 0.12)),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Center(
-                                child: Container(
-                              height: 70,
-                              width: 80,
-                              child: Image.asset(
-                                "assets/images/medical1.png",
-                                fit: BoxFit.cover,
-                              ),
-                            )),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Panadol",
-                              style: GoogleFonts.poppins(
-                                color: AppColors.thirdColor,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                              ),
-                            ),
-                            Text(
-                              "20pcs",
-                              style: GoogleFonts.poppins(
-                                color: AppColors.blackblur,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 9,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "\$15.99",
-                                  style: GoogleFonts.poppins(
-                                    color: AppColors.thirdColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                  ),
+                      return GestureDetector(
+                        onTap: () => const ProductDetail(),
+                        child: Container(
+                          margin: const EdgeInsets.only(right: 15),
+                          padding: const EdgeInsets.all(15),
+                          height: 190,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                                width: 1,
+                                color: Color.fromRGBO(64, 124, 226, 0.12)),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                  child: Container(
+                                height: 70,
+                                width: 80,
+                                child: Image.asset(
+                                  "assets/images/medical1.png",
+                                  fit: BoxFit.cover,
                                 ),
-                                const Spacer(),
-                                Container(
-                                    decoration: BoxDecoration(
-                                      color: AppColors.secondoryColor,
-                                      borderRadius: BorderRadius.circular(2),
+                              )),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                "Panadol",
+                                style: GoogleFonts.poppins(
+                                  color: AppColors.thirdColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Text(
+                                "20pcs",
+                                style: GoogleFonts.poppins(
+                                  color: AppColors.blackblur,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 9,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "\$15.99",
+                                    style: GoogleFonts.poppins(
+                                      color: AppColors.thirdColor,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
                                     ),
-                                    child: const Center(
-                                        child: Icon(
-                                      Icons.add,
-                                      color: AppColors.primaryColor,
-                                    )))
-                              ],
-                            ),
-                          ],
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                      decoration: BoxDecoration(
+                                        color: AppColors.secondoryColor,
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                      child: const Center(
+                                          child: Icon(
+                                        Icons.add,
+                                        color: AppColors.primaryColor,
+                                      )))
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     }),
@@ -276,86 +280,89 @@ class _PharmacyProductState extends State<PharmacyProduct> {
                     itemCount: 10,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Container(
-                        margin: const EdgeInsets.only(right: 15),
-                        padding: const EdgeInsets.all(15),
-                        height: 190,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(
-                              width: 1,
-                              color: Color.fromRGBO(64, 124, 226, 0.12)),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Center(
-                                child: Container(
-                              height: 70,
-                              width: 80,
-                              child: Image.asset(
-                                "assets/images/medical1.png",
-                                fit: BoxFit.cover,
-                              ),
-                            )),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Panadol",
-                              style: GoogleFonts.poppins(
-                                color: AppColors.thirdColor,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                              ),
-                            ),
-                            Text(
-                              "20pcs",
-                              style: GoogleFonts.poppins(
-                                color: AppColors.blackblur,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 9,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "\$15.99",
-                                  style: GoogleFonts.poppins(
-                                    color: AppColors.thirdColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                  ),
+                      return GestureDetector(
+                        onTap: () => const ProductDetail(),
+                        child: Container(
+                          margin: const EdgeInsets.only(right: 15),
+                          padding: const EdgeInsets.all(15),
+                          height: 190,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                                width: 1,
+                                color: Color.fromRGBO(64, 124, 226, 0.12)),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                  child: Container(
+                                height: 70,
+                                width: 80,
+                                child: Image.asset(
+                                  "assets/images/medical1.png",
+                                  fit: BoxFit.cover,
                                 ),
-                                const SizedBox(width: 5,),
-                                Text(
-                                  "\$15.99",
-                                  style: GoogleFonts.poppins(
-                                    color: AppColors.blackblur,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 8,
-                                    decoration: TextDecoration.lineThrough
-                                  ),
+                              )),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                "Panadol",
+                                style: GoogleFonts.poppins(
+                                  color: AppColors.thirdColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
                                 ),
-                                
-                                const Spacer(),
-                                Container(
-                                    decoration: BoxDecoration(
-                                      color: AppColors.secondoryColor,
-                                      borderRadius: BorderRadius.circular(2),
+                              ),
+                              Text(
+                                "20pcs",
+                                style: GoogleFonts.poppins(
+                                  color: AppColors.blackblur,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 9,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "\$15.99",
+                                    style: GoogleFonts.poppins(
+                                      color: AppColors.thirdColor,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
                                     ),
-                                    child: const Center(
-                                        child: Icon(
-                                      Icons.add,
-                                      color: AppColors.primaryColor,
-                                    )))
-                              ],
-                            ),
-                          ],
+                                  ),
+                                  const SizedBox(width: 5,),
+                                  Text(
+                                    "\$15.99",
+                                    style: GoogleFonts.poppins(
+                                      color: AppColors.blackblur,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 8,
+                                      decoration: TextDecoration.lineThrough
+                                    ),
+                                  ),
+                                  
+                                  const Spacer(),
+                                  Container(
+                                      decoration: BoxDecoration(
+                                        color: AppColors.secondoryColor,
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                      child: const Center(
+                                          child: Icon(
+                                        Icons.add,
+                                        color: AppColors.primaryColor,
+                                      )))
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     }),

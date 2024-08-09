@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "45233715486",
+    "project_id": "healthcare-e4cc6",
+    "storage_bucket": "healthcare-e4cc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45233715486:android:c2d08184ee8d4251f2710f",
+        "android_client_info": {
+          "package_name": "com.ganesh.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjoXqkXuzqSWgZaBTjOfoHd5z5RshmcO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

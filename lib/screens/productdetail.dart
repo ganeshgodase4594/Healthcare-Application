@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthcare_frontend/screens/mycart.dart';
 import 'package:healthcare_frontend/screens/paymentdetil.dart';
 import 'package:healthcare_frontend/utils/colors.dart';
 import 'package:healthcare_frontend/widget/readmore.dart';
@@ -120,18 +121,22 @@ class _ProductDetailState extends State<ProductDetail> {
                   const SizedBox(
                     width: 20,
                   ),
-                  Container(
-                    height: 32,
-                    width: 32,
-                    decoration: const BoxDecoration(
-                      color: AppColors.secondoryColor,
+                  GestureDetector
+                  (
+                    onTap: () => const MyCart(),
+                    child: Container(
+                      height: 32,
+                      width: 32,
+                      decoration: const BoxDecoration(
+                        color: AppColors.secondoryColor,
+                      ),
+                      child:  const Center(
+                          child: Icon(
+                        Icons.add,
+                        color: AppColors.primaryColor,
+                        size: 20,
+                      )),
                     ),
-                    child: const Center(
-                        child: Icon(
-                      Icons.add,
-                      color: AppColors.primaryColor,
-                      size: 20,
-                    )),
                   ),
                   const Spacer(),
                   Text(
@@ -164,7 +169,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   
                   GestureDetector(
                     onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> PaymentDetail()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const PaymentDetail()));
 
                     },
                     child: Center(
