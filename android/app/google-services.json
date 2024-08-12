@@ -9,7 +9,8 @@
       "client_info": {
         "mobilesdk_app_id": "1:45233715486:android:c2d08184ee8d4251f2710f",
         "android_client_info": {
-          "package_name": "com.ganesh.app"
+          
+          "package_name": "com.example.healthcare_frontend"
         }
       },
       "oauth_client": [],

@@ -135,7 +135,11 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       GestureDetector
                       (
-                        onTap: () =>  TopDocrors(),
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return TopDocrors();
+                          },));
+                        },
                         child: buildOption(
                           iconPath: "assets/images/Doctor.png",
                           label: "Top Doctors",
