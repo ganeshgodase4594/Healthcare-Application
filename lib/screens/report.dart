@@ -67,7 +67,92 @@ class _ReportScreenState extends State<ReportScreen> {
                         Image.asset("assets/images/Vector 12.png"),
                       ],
                     ),
-                    const SizedBox(
+                    
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 20,),
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                  height: 160,
+                  width: 170,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(178, 116, 140, 0.42),
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.asset("assets/images/heartreport.png"),
+                      const SizedBox(height: 10,),
+                       Text(
+                          textAlign: TextAlign.start,
+                          "Blood Group",
+                          style: GoogleFonts.poppins(
+                            color: AppColors.blackblur,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                         Text(
+                          textAlign: TextAlign.start,
+                          "A+",
+                          style: GoogleFonts.poppins(
+                            color: AppColors.thirdColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 30,
+                          ),
+                        ),
+
+                    ],
+                  ),
+                ),
+                const Spacer(),
+                   Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                  height: 160,
+                  width: 170,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(251, 240, 220, 1),
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.asset("assets/images/weigthreport.png"),
+                      const SizedBox(height: 10,),
+                       Text(
+                          textAlign: TextAlign.start,
+                          "Weight",
+                          style: GoogleFonts.poppins(
+                            color: AppColors.blackblur,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                         Text(
+                          textAlign: TextAlign.start,
+                          "103lbs",
+                          style: GoogleFonts.poppins(
+                            color: AppColors.thirdColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 30,
+                          ),
+                        ),
+
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
                       height: 20,
                     ),
                     GestureDetector(
@@ -86,10 +171,6 @@ class _ReportScreenState extends State<ReportScreen> {
                         )),
                       ),
                     )
-                  ],
-                ),
-              ),
-            )
           ],
         ),
       ),
