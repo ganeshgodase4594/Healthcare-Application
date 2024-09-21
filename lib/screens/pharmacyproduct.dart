@@ -173,7 +173,11 @@ class _PharmacyProductState extends State<PharmacyProduct> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: () => const ProductDetail(),
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return ProductDetail();
+                          },));
+                        },
                         child: Container(
                           margin: const EdgeInsets.only(right: 15),
                           padding: const EdgeInsets.all(15),

@@ -31,7 +31,11 @@ class _TopDocrorsState extends State<TopDocrors> {
                 itemCount: 15,
                 itemBuilder: (context, index) {
                  return GestureDetector(
-                  onTap: () => const DoctorDetail(),
+                  onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return DoctorDetail();
+                          },));
+                  },
                    child: Container(
                      margin: const EdgeInsets.only(bottom: 15),
                     decoration: BoxDecoration(

@@ -123,7 +123,11 @@ class _ProductDetailState extends State<ProductDetail> {
                   ),
                   GestureDetector
                   (
-                    onTap: () => const MyCart(),
+                   onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return MyCart();
+                          },));
+                   },
                     child: Container(
                       height: 32,
                       width: 32,

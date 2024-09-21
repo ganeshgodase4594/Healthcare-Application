@@ -298,7 +298,11 @@ class _MyCartState extends State<MyCart> {
                     ),
                     const Spacer(),
                     GestureDetector(
-                      onTap: () => const PaymentDetail(),
+                     onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return PaymentDetail();
+                          },));
+                     },
                       child: Container(
                         height: 51,
                         width: 136,

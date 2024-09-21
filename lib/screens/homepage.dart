@@ -181,8 +181,16 @@ class _HomePageState extends State<HomePage> {
                           label: "Top Doctors",
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () => const PharmacyProduct(),
+                      GestureDetector
+                      
+                      (
+
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return  PharmacyProduct();
+                          },));
+                        },
+                        
                         child: buildOption(
                           iconPath: "assets/images/Pharmacy.png",
                           label: "Pharmacy",
