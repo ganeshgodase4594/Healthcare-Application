@@ -42,8 +42,6 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
-  // Load articles into the bookmark provider
-
   @override
   Widget build(BuildContext context) {
     final bookmarkProvider =
@@ -181,24 +179,31 @@ class _HomePageState extends State<HomePage> {
                           label: "Top Doctors",
                         ),
                       ),
-                      GestureDetector
-                      
-                      (
-
+                      GestureDetector(
                         onTap: () {
-                           Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return  PharmacyProduct();
-                          },));
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return PharmacyProduct();
+                            },
+                          ));
                         },
-                        
                         child: buildOption(
                           iconPath: "assets/images/Pharmacy.png",
                           label: "Pharmacy",
                         ),
                       ),
-                      buildOption(
-                        iconPath: "assets/images/ambulance.png",
-                        label: "Ambulance",
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return PharmacyProduct();
+                            },
+                          ));
+                        },
+                        child: buildOption(
+                          iconPath: "assets/images/Ambulance.png",
+                          label: "Ambulance",
+                        ),
                       ),
                     ],
                   ),
@@ -230,110 +235,6 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  // Container(
-                  //   height: 200,
-                  //   width: double.infinity,
-                  //   child: ListView.builder(
-                  //     itemCount: 15,
-                  //     itemBuilder: (context, index) {
-                  //       return Padding(
-                  //         padding: const EdgeInsets.symmetric(horizontal: 20),
-                  //         child: Container(
-                  //           margin: EdgeInsets.only(bottom: 10),
-                  //           decoration: BoxDecoration(
-                  //               border: Border.all(
-                  //                   color:
-                  //                       const Color.fromRGBO(34, 31, 31, 0.1)),
-                  //               borderRadius: BorderRadius.circular(10)),
-                  //           child: Padding(
-                  //             padding: const EdgeInsets.all(10.0),
-                  //             child: Row(
-                  //               crossAxisAlignment: CrossAxisAlignment.start,
-                  //               children: [
-                  //                 Column(
-                  //                   children: [
-                  //                     Container(
-                  //                       margin: EdgeInsets.only(right: 15),
-                  //                       decoration: BoxDecoration(
-                  //                         borderRadius:
-                  //                             BorderRadius.circular(6),
-                  //                       ),
-                  //                       child: Image.asset(
-                  //                           "assets/images/article1.png"),
-                  //                     )
-                  //                   ],
-                  //                 ),
-                  //                 Expanded(
-                  //                   child: Column(
-                  //                     crossAxisAlignment:
-                  //                         CrossAxisAlignment.start,
-                  //                     // mainAxisAlignment: MainAxisAlignment.start,
-                  //                     children: [
-                  //                       Text(
-                  //                         textAlign: TextAlign.start,
-                  //                         "The 25 Healthiest Fruits You Can Eat, According to a Nutritionist",
-                  //                         style: GoogleFonts.poppins(
-                  //                           color: const Color.fromRGBO(
-                  //                               86, 86, 86, 1),
-                  //                           fontWeight: FontWeight.w600,
-                  //                           fontSize: 10,
-                  //                         ),
-                  //                       ),
-                  //                       const SizedBox(
-                  //                         height: 2,
-                  //                       ),
-                  //                       Row(
-                  //                         children: [
-                  //                           Text(
-                  //                             textAlign: TextAlign.start,
-                  //                             "Jun 10,2023",
-                  //                             style: GoogleFonts.poppins(
-                  //                               color: AppColors.blackblur,
-                  //                               fontWeight: FontWeight.w600,
-                  //                               fontSize: 10,
-                  //                             ),
-                  //                           ),
-                  //                           const SizedBox(
-                  //                             width: 10,
-                  //                           ),
-                  //                           Text(
-                  //                             textAlign: TextAlign.start,
-                  //                             "5min read",
-                  //                             style: GoogleFonts.poppins(
-                  //                               color: AppColors.blackblur,
-                  //                               fontWeight: FontWeight.w600,
-                  //                               fontSize: 10,
-                  //                             ),
-                  //                           ),
-                  //                         ],
-                  //                       ),
-                  //                     ],
-                  //                   ),
-                  //                 ),
-                  //                 //const Spacer(),
-                  //                 const SizedBox(
-                  //                   width: 50,
-                  //                 ),
-                  //                 Column(
-                  //                   children: [
-                  //                     GestureDetector(
-                  //                       onTap: () {},
-                  //                       child: const Icon(
-                  //                         Icons.bookmark,
-                  //                         color: AppColors.secondoryColor,
-                  //                       ),
-                  //                     )
-                  //                   ],
-                  //                 )
-                  //               ],
-                  //             ),
-                  //           ),
-                  //         ),
-                  //       );
-                  //     },
-                  //   ),
-                  // )
-
                   Expanded(
                     child: ListView.builder(
                       itemCount: articles.length,
